@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "39442321151",
+    "firebase_url": "https://take-a-nap-50654.firebaseio.com",
+    "project_id": "take-a-nap-50654",
+    "storage_bucket": "take-a-nap-50654.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39442321151:android:752c1dc1b3b4ad6e",
+        "android_client_info": {
+          "package_name": "takeanap.layout.com.takeanap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39442321151-ckald8u378j5uh1idfisldcckoefipfj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "takeanap.layout.com.takeanap",
+            "certificate_hash": "D3D6DD462453F4C3B278F1E9705F2F6E6F8B4E90"
+          }
+        },
+        {
+          "client_id": "39442321151-gl7pbkss065nfrl7evarvgfl19fanfsd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdImYcuQm4hDGd0ELtcIuPSne6MxwL9Zs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39442321151-gl7pbkss065nfrl7evarvgfl19fanfsd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
