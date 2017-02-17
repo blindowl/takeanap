@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Take a Nap</string>
+    <string name="app_name">""</string>
     <!-- Nomes das musicas -->
 
     <string name="ocean">Quedas d Água</string>
@@ -93,4 +93,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
