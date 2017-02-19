@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("takeanap.layout.com.takeanap", appContext.getPackageName());
+        assertEquals("takeanap.layout.com.takeanap.blindowl.com.takeanap.layout.com.takeanap.layout.com.takeanap.layout.com.takeanap.blindowl.com.takeanap.layout.com.takeanap", appContext.getPackageName());
     }
 }

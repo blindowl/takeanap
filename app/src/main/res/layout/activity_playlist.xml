@@ -3,50 +3,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent">
+            android:layout_width="match_parent"
+            android:background="@android:color/transparent">
 
             <android.support.v7.widget.Toolbar
                 android:layout_height="?attr/actionBarSize"
                 android:layout_width="match_parent"
                 app:layout_scrollFlags="scroll|enterAlways"
-                android:id="@+id/toolbar"></android.support.v7.widget.Toolbar>
+                android:background="@android:color/transparent"
+                android:id="@+id/toolbarId"></android.support.v7.widget.Toolbar>
 
             <android.support.design.widget.TabLayout
-                android:id="@+id/tabs"
+                android:id="@+id/tabsId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:tabMode="fixed">
+                app:tabMode="fixed"
+                android:backgroundTint="@android:color/transparent"
+                android:background="@color/common_google_signin_btn_text_light_default">
 
                 <android.support.design.widget.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tabItem"
-                    android:text="Tab1" />
+                    android:text="Músicas"
+                    android:theme="@android:style/TextAppearance.SuggestionHighlight" />
 
                 <android.support.design.widget.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tabItem2"
-                    android:text="Tab2" />
+                    android:text="Sons da Natureza" />
             </android.support.design.widget.TabLayout>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpagerId"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tab"/>
 
         </android.support.design.widget.AppBarLayout>
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewpager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tab"/>
     </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>

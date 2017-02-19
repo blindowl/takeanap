@@ -6,14 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="takeanap.layout.com.takeanap.MainActivity"
+    tools:context="takeanap.layout.com.takeanap.PlayerActivity"
     android:background="@drawable/bg"
     tools:ignore="ContentDescription"
     android:weightSum="1"
     android:orientation="vertical">
 
     <include
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbarId"
         layout="@layout/toolbar">
     </include>
 
@@ -27,7 +27,7 @@
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:id="@+id/nomes"
+            android:id="@+id/top"
             android:layout_weight="1"
             android:gravity="center">
 
@@ -35,7 +35,7 @@
                 android:text="@string/ocean"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:id="@+id/musicNome"
+                android:id="@+id/titleId"
                 android:layout_weight="1"
                 android:textSize="30sp"
                 android:textColor="#FFFFFF"
@@ -46,7 +46,7 @@
                 android:text="@string/natureza"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:id="@+id/categoriaNome"
+                android:id="@+id/categoryId"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textAlignment="center"
@@ -65,7 +65,7 @@
             <ImageView
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/foto"
-                android:id="@+id/fotoId"
+                android:id="@+id/photoId"
                 android:layout_gravity="center"
                 android:layout_width="fill_parent"
                 android:layout_marginTop="20dp"
@@ -86,7 +86,7 @@
             <ImageView
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/ic_favorite_white_24dp"
-                android:id="@+id/favorite"
+                android:id="@+id/favoriteId"
                 android:layout_width="wrap_content"
 
                 android:layout_weight="1"
@@ -97,12 +97,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/ic_skip_previous_white_24dp"
-                android:id="@+id/previous"
+                android:id="@+id/previousId"
                 android:layout_weight="1" />
 
             <ImageView
                 app:srcCompat="@drawable/ic_play_circle_filled_white_24dp"
-                android:id="@+id/playButton"
+                android:id="@+id/startId"
                 android:layout_height="match_parent"
                 android:layout_width="wrap_content"
                 android:layout_weight="1"
@@ -118,14 +118,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/ic_skip_next_white_24dp"
-                android:id="@+id/next"
+                android:id="@+id/nextId"
                 android:layout_weight="1" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/ic_access_time_white_24dp"
-                android:id="@+id/timer"
+                android:id="@+id/timerId"
                 android:layout_weight="1"
                 android:layout_marginLeft="30dp" />
 

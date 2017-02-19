@@ -1,19 +1,31 @@
 package takeanap.layout.com.takeanap.domain;
 
-/**
- * Created by WorkOnly on 16/02/2017.
- */
-
 public class Songs {
-    private String nomeMusica;
+    private String title;
+    private String phrase;
     private String name;
+    //private int icon;
 
-    public Songs(String m, String n){
-        nomeMusica = m;
+    public Songs(){}
+
+    public Songs(String t, String p, String n){
+        title = t;
+        phrase = p;
         name = n;
+        //icon = i;
     }
 
-    public String getNomeMusica(){return nomeMusica;}
-    public String getPhoto(){return name;}
+    public String getTitle(){
+        return title;
+    }
+
+    public String getPhrase() {
+        return phrase;
+    }
+
+    public String getName() { return name; }
+
+    //public int getIcon(){ return icon; }
+
 
 }
