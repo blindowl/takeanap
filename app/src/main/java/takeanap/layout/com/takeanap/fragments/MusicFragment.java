@@ -1,5 +1,6 @@
 package takeanap.layout.com.takeanap.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
+
+import takeanap.layout.com.takeanap.PlayerActivity;
 import takeanap.layout.com.takeanap.PlaylistActivity;
 import takeanap.layout.com.takeanap.R;
 import takeanap.layout.com.takeanap.adapters.RecyclerViewAdapter;
@@ -87,9 +90,18 @@ public class MusicFragment extends Fragment implements RecyclerViewOnClickListen
         return view;
     }
 
+    public String getName(int position){
+        List<Songs> listAux = ((PlaylistActivity) getActivity()).getSetNatureList(10);
+        String name = listAux.get(position).getName();
+        return name;
+    }
+
     @Override
     public void onClickListener(View view, int position) {
-        //Toast.makeText(getActivity(), "Position: " + position, Toast.LENGTH_SHORT).show();
+        String name = getName(position);
+        Intent intent = new Intent(MusicFragment.this.getActivity(), PlayerActivity.class);
+        intent.putExtra("name", name);
+        startActivity(intent);
     }
 
 }

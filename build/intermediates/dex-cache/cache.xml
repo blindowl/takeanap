@@ -43,7 +43,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="9375b38ff2fc847be0c5d7f0c043376262aa033d">
+        sha1="ed36615fe9eb2ada57fdf72457cddfbb671fa227">
         <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_bd07bd739f5ec9cb5fa561511a77477e942e6645\classes.dex" />
     </item>
     <item
@@ -97,7 +97,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="cf7839fc16481bc9b4976519165ffc4dd040dee8">
+        sha1="497a18bfb490e58ae57f290850de99d6e758995d">
         <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_f70f7203930a8b12d314ed2470d375618b9d9c95\classes.dex" />
     </item>
     <item

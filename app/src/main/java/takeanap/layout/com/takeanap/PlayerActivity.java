@@ -25,6 +25,7 @@ import java.io.IOException;
 public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnPreparedListener {
     private Toolbar toolbar;
     private ImageView start;
+    private String name;
     private MediaPlayer mediaPlayer;
     private TextView title;
     private TextView category;
@@ -45,6 +46,13 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
         Typeface robotThin = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Thin.ttf");
         title.setTypeface(robotThin);
         category.setTypeface(robotThin);
+
+        //getName
+        Bundle extra = getIntent().getExtras();
+
+        if (extra != null) {
+            name = extra.getString("name");
+        }
 
         start = (ImageView) findViewById(R.id.startId);
 
@@ -68,7 +76,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
 
     private void fetchAudioUrlFromFirebase() {
         final FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference storageRef = storage.getReferenceFromUrl("gs://take-a-nap-50654.appspot.com").child("ocean.mp3");
+        StorageReference storageRef = storage.getReferenceFromUrl("gs://take-a-nap-50654.appspot.com").child(name + ".mp3");
         storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {

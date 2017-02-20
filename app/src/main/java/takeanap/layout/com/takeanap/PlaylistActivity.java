@@ -101,7 +101,7 @@ public class PlaylistActivity extends AppCompatActivity {
         String[] titles = {"Música Tibetana", "Música Hawaiiana", "Música Indiana", "Música Chinesa",
                 "Música Tailandesa", "Piano", "Harpa", "Violino", "Violão", "Flauta"};
         String[] phrases = {"frase1", "frase2", "frase3", "frase4", "frase5", "frase6", "frase7", "frase8", "frase9", "frase10"};
-        String[] names = {"tibet", "hawaii", "india", "china", "thailand", "piano", "harp", "violin", "guitar", "flute"};
+        String [] names = {"tibet", "hawaii", "india", "china", "thailand", "piano", "harp", "violin", "guitar", "flute"};
         List<Songs> listAux = new ArrayList<>();
 
         for(int i = 0; i < qtd; i++){
@@ -110,6 +110,7 @@ public class PlaylistActivity extends AppCompatActivity {
         }
         return (listAux);
     }
+
 }
 
 
