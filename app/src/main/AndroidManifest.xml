@@ -13,8 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Estilo">
         <activity android:name=".PlayerActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"/>
         <activity android:name=".PlaylistActivity"
+            android:label="@string/playlist"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

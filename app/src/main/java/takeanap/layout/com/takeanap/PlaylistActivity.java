@@ -7,19 +7,31 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.List;
 import takeanap.layout.com.takeanap.domain.Songs;
+import takeanap.layout.com.takeanap.fragments.FavoritesFragment;
 import takeanap.layout.com.takeanap.fragments.MusicFragment;
 import takeanap.layout.com.takeanap.fragments.NatureFragment;
 
 public class PlaylistActivity extends AppCompatActivity {
+
+    private Menu menu;
     private Toolbar toolbar;
     private TabLayout tabLayout;
 
-    FragmentPagerAdapter adapterViewPager;
     private ViewPager pager;
+
+    private int[] tabIcons = {
+            R.drawable.ic_tab_musics,
+            R.drawable.ic_tab_nature,
+            R.drawable.ic_tab_favourite};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,32 +45,51 @@ public class PlaylistActivity extends AppCompatActivity {
 
         //Fragments & ViewPager
         pager = (ViewPager) findViewById(R.id.viewpagerId);
-        adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
-        pager.setAdapter(adapterViewPager);
+        setupViewPager(pager);
 
         //TabLayout
         tabLayout = (TabLayout) findViewById(R.id.tabsId);
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                int position = tabLayout.getSelectedTabPosition();
-                pager.setCurrentItem(position);
-            }
+        tabLayout.setupWithViewPager(pager);
+        setupTabIcons();
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
     }
 
+    private void setupTabIcons() {
+        /*
+        TextView tabOne = (TextView) LayoutInflater.from(this).inflate(R.layout.tab1, null);
+        tabOne.setText("MÚSICAS");
+        tabOne.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_tab_musics, 0, 0);
+        tabLayout.getTabAt(0).setCustomView(tabOne);
+
+        TextView tabTwo = (TextView) LayoutInflater.from(this).inflate(R.layout.tab1, null);
+        tabTwo.setText("NATUREZA");
+        tabTwo.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_tab_nature, 0, 0);
+        tabLayout.getTabAt(1).setCustomView(tabTwo);
+
+        TextView tabThree = (TextView) LayoutInflater.from(this).inflate(R.layout.tab1, null);
+        tabThree.setText("FAVORITOS");
+        tabThree.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_tab_favourite, 0, 0);
+        tabLayout.getTabAt(2).setCustomView(tabThree);
+        */
+
+        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
+        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
+        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
+    }
+
+    private void setupViewPager(ViewPager viewPager) {
+        MyPagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager());
+        adapter.addFrag(new MusicFragment(), "MÚSICAS");
+        adapter.addFrag(new NatureFragment(), "NATUREZA");
+        adapter.addFrag(new FavoritesFragment(), "FAVORITOS");
+        viewPager.setAdapter(adapter);
+    }
+
+
     public static class MyPagerAdapter extends FragmentPagerAdapter {
-        private static int NUM_ITEMS = 2;
+
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
 
         public MyPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
@@ -66,20 +97,24 @@ public class PlaylistActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return NUM_ITEMS;
+            return mFragmentList.size();
         }
 
         @Override
         public Fragment getItem(int position) {
-            switch (position) {
-                case 0:
-                    return MusicFragment.newInstance();
-                case 1:
-                    return NatureFragment.newInstance();
-                default:
-                    return null;
-            }
+            return mFragmentList.get(position);
         }
+
+        public void addFrag(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
+        }
+
     }
 
     public List<Songs> getSetNatureList(int qtd){
@@ -110,6 +145,10 @@ public class PlaylistActivity extends AppCompatActivity {
         }
         return (listAux);
     }
+
+
+
+
 
 }
 

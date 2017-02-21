@@ -10,38 +10,43 @@
         app:srcCompat="@drawable/ic_action_name"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="27dp"
-        android:id="@+id/iconId" />
+        android:layout_marginTop="20dp"
+        android:id="@+id/iconId"
+        android:layout_marginStart="20dp" />
 
     <View
         android:id="@+id/dividerId"
         android:background="@color/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="0.8dp"
         android:layout_below="@+id/iconId"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/iconId"
-        android:layout_toEndOf="@+id/iconId" />
+        android:layout_toEndOf="@+id/iconId"
+        android:layout_height="1dp" />
 
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/titleId"
-        android:textSize="20sp"
         android:layout_alignTop="@+id/iconId"
         android:layout_toRightOf="@+id/iconId"
-        android:layout_toEndOf="@+id/iconId" />
+        android:layout_toEndOf="@+id/iconId"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/colorText"
+        android:textSize="18sp" />
 
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/titleId"
+        android:textColor="@color/colorText"
         android:layout_toRightOf="@+id/iconId"
         android:layout_toEndOf="@+id/iconId"
-        android:id="@+id/phraseId" />
+        android:id="@+id/phraseId"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="sans-serif-condensed" />
 
 </RelativeLayout>

@@ -3,6 +3,8 @@ package takeanap.layout.com.takeanap.adapters;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import takeanap.layout.com.takeanap.fragments.FavoritesFragment;
 import takeanap.layout.com.takeanap.fragments.MusicFragment;
 import takeanap.layout.com.takeanap.fragments.NatureFragment;
 
@@ -18,8 +20,10 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
         switch(position){
             case 0:
                 return MusicFragment.newInstance();
-            default:
+            case 1:
                 return NatureFragment.newInstance();
+            default:
+                return FavoritesFragment.newInstance();
         }
     }
 
@@ -33,8 +37,11 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 
         if (position == 0){
             return "sons da natureza";
-        } else {
+        }
+        if (position == 1){
             return "músicas instrumentais";
+        }else{
+            return "favoritos";
         }
     }
 }

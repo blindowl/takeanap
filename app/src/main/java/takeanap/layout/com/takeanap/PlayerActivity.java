@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -65,10 +67,10 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
             public void onClick(View v) {
                 if (mediaPlayer.isPlaying()) {
                     mediaPlayer.pause();
-                    start.setImageDrawable(ContextCompat.getDrawable(PlayerActivity.this, R.drawable.ic_play_circle_filled_white_24dp));
+                    start.setImageDrawable(ContextCompat.getDrawable(PlayerActivity.this, R.drawable.ic_action_play));
                 } else {
                     mediaPlayer.start();
-                    start.setImageDrawable(ContextCompat.getDrawable(PlayerActivity.this, R.drawable.ic_pause_circle_filled_white_24dp));
+                    start.setImageDrawable(ContextCompat.getDrawable(PlayerActivity.this, R.drawable.ic_action_pause));
                 }
             }
         });
@@ -99,7 +101,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
 
     public void onPrepared(MediaPlayer mp) {
         mp.start();
-        start.setImageDrawable(ContextCompat.getDrawable(PlayerActivity.this, R.drawable.ic_pause_circle_filled_white_24dp));
+        start.setImageDrawable(ContextCompat.getDrawable(PlayerActivity.this, R.drawable.ic_action_play));
     }
 
     @Override
@@ -114,6 +116,9 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
             case R.id.playlistId:
                 Intent i = new Intent(PlayerActivity.this,PlaylistActivity.class);
                 this.startActivity(i);
+                return true;
+            case R.id.settingdId:
+                Toast.makeText(getApplicationContext(), "Configurações Selecionada", Toast.LENGTH_LONG).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

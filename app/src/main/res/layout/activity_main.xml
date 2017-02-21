@@ -64,7 +64,6 @@
 
             <ImageView
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/foto"
                 android:id="@+id/photoId"
                 android:layout_gravity="center"
                 android:layout_width="fill_parent"
@@ -85,7 +84,7 @@
 
             <ImageView
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/ic_favorite_white_24dp"
+                app:srcCompat="@drawable/ic_tab_favourite"
                 android:id="@+id/favoriteId"
                 android:layout_width="wrap_content"
 
@@ -96,12 +95,12 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/ic_skip_previous_white_24dp"
+                app:srcCompat="@drawable/ic_action_previous"
                 android:id="@+id/previousId"
                 android:layout_weight="1" />
 
             <ImageView
-                app:srcCompat="@drawable/ic_play_circle_filled_white_24dp"
+                app:srcCompat="@drawable/ic_action_play"
                 android:id="@+id/startId"
                 android:layout_height="match_parent"
                 android:layout_width="wrap_content"
@@ -117,14 +116,14 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/ic_skip_next_white_24dp"
+                app:srcCompat="@drawable/ic_action_next"
                 android:id="@+id/nextId"
                 android:layout_weight="1" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/ic_access_time_white_24dp"
+                app:srcCompat="@drawable/ic_action_timer"
                 android:id="@+id/timerId"
                 android:layout_weight="1"
                 android:layout_marginLeft="30dp" />
