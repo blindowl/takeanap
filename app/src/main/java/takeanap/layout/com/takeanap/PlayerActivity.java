@@ -1,6 +1,8 @@
 package takeanap.layout.com.takeanap;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -20,17 +22,23 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+
+import java.io.File;
 import java.io.IOException;
 
 public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnPreparedListener {
     private Toolbar toolbar;
     private ImageView start;
     private String name;
+    private String title;
+    private String category;
     private MediaPlayer mediaPlayer;
-    private TextView title;
-    private TextView category;
+    private TextView titleTextView;
+    private TextView categoryTextView;
+    private ImageView photoImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,24 +51,45 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Fonts
-        title = (TextView) findViewById(R.id.titleId);
-        category = (TextView) findViewById(R.id.categoryId);
+        titleTextView = (TextView) findViewById(R.id.titleId);
+        categoryTextView = (TextView) findViewById(R.id.categoryId);
         Typeface robotThin = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Thin.ttf");
-        title.setTypeface(robotThin);
-        category.setTypeface(robotThin);
+        titleTextView.setTypeface(robotThin);
+        categoryTextView.setTypeface(robotThin);
 
-        //getName
+        //Extras
         Bundle extra = getIntent().getExtras();
 
         if (extra != null) {
             name = extra.getString("name");
+            title = extra.getString("title");
+            category = extra.getString("category");
         }
 
         start = (ImageView) findViewById(R.id.startId);
+        photoImageView = (ImageView) findViewById(R.id.photoId);
+
+        //setTitle
+        titleTextView.setText(title);
+
+        //setCategory
+        if (category.equals("nature")) {
+            categoryTextView.setText("Sons da Natureza");
+        } else if (category.equals("music")){
+            categoryTextView.setText("Música Instrumental");
+        }
 
         mediaPlayer = new MediaPlayer();
+
+        /*
+        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+
+        }
+        */
+
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         fetchAudioUrlFromFirebase();
+        fetchImageUrlFromFirebase();
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +128,27 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
         });
     }
 
+    private void fetchImageUrlFromFirebase() {
+        final FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageRef = storage.getReferenceFromUrl("gs://take-a-nap-50654.appspot.com").child(name + ".png");
+        try {
+            final File localFile = File.createTempFile("image", "png");
+            storageRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                    Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+                    photoImageView.setImageBitmap(bitmap);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                }
+            });
+        } catch (IOException e ) {
+            e.printStackTrace();
+        }
+    }
+
     public void onPrepared(MediaPlayer mp) {
         mp.start();
         start.setImageDrawable(ContextCompat.getDrawable(PlayerActivity.this, R.drawable.ic_action_play));
@@ -114,6 +164,9 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.playlistId:
+                mediaPlayer.stop();
+                mediaPlayer.release();
+                mediaPlayer = null;
                 Intent i = new Intent(PlayerActivity.this,PlaylistActivity.class);
                 this.startActivity(i);
                 return true;

@@ -50,7 +50,7 @@ public class MusicFragment extends Fragment implements RecyclerViewOnClickListen
                              ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_musicas, container, false);
+        View view = inflater.inflate(R.layout.fragment_music, container, false);
 
         musicRecyclerView = (RecyclerView) view.findViewById(R.id.musicRecyclerViewId);
         musicRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -62,17 +62,6 @@ public class MusicFragment extends Fragment implements RecyclerViewOnClickListen
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
-
-                LinearLayoutManager llm = (LinearLayoutManager) recyclerView.getLayoutManager();
-                RecyclerViewAdapter adapter = (RecyclerViewAdapter) recyclerView.getAdapter();
-
-                if (list.size() == llm.findLastCompletelyVisibleItemPosition() + 1) {
-                    List<Songs> listAux = ((PlaylistActivity) getActivity()).getSetMusicList(10);
-
-                    for (int i = 0; i < listAux.size(); i++) {
-                        adapter.addListItem(listAux.get(i),list.size());
-                    }
-                }
             }
         });
 
@@ -96,11 +85,20 @@ public class MusicFragment extends Fragment implements RecyclerViewOnClickListen
         return name;
     }
 
+    public String getTitle(int position){
+        List<Songs> listAux = ((PlaylistActivity) getActivity()).getSetMusicList(10);
+        String title = listAux.get(position).getTitle();
+        return title;
+    }
+
     @Override
     public void onClickListener(View view, int position) {
         String name = getName(position);
+        String title = getTitle(position);
         Intent intent = new Intent(MusicFragment.this.getActivity(), PlayerActivity.class);
         intent.putExtra("name", name);
+        intent.putExtra("title", title);
+        intent.putExtra("category","music");
         startActivity(intent);
     }
 

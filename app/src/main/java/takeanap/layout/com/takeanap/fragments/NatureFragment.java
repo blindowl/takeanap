@@ -62,17 +62,6 @@ public class NatureFragment extends Fragment implements RecyclerViewOnClickListe
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
-
-                LinearLayoutManager llm = (LinearLayoutManager) recyclerView.getLayoutManager();
-                RecyclerViewAdapter adapter = (RecyclerViewAdapter) recyclerView.getAdapter();
-
-                if (list.size() == llm.findLastCompletelyVisibleItemPosition() + 1) {
-                    List<Songs> listAux = ((PlaylistActivity) getActivity()).getSetNatureList(10);
-
-                    for (int i = 0; i < listAux.size(); i++) {
-                        adapter.addListItem(listAux.get(i),list.size());
-                    }
-                }
             }
         });
 
@@ -96,11 +85,20 @@ public class NatureFragment extends Fragment implements RecyclerViewOnClickListe
         return name;
     }
 
+    public String getTitle(int position){
+        List<Songs> listAux = ((PlaylistActivity) getActivity()).getSetNatureList(10);
+        String title = listAux.get(position).getTitle();
+        return title;
+    }
+
     @Override
     public void onClickListener(View view, int position) {
         String name = getName(position);
+        String title = getTitle(position);
         Intent intent = new Intent(NatureFragment.this.getActivity(), PlayerActivity.class);
         intent.putExtra("name", name);
+        intent.putExtra("title", title);
+        intent.putExtra("category","nature");
         startActivity(intent);
     }
 
