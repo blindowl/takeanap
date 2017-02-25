@@ -3,38 +3,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg">
+    android:background="@color/colorPrimary">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:background="@android:color/transparent">
-
-        <android.support.v7.widget.Toolbar
-            android:layout_height="?attr/actionBarSize"
-            android:layout_width="match_parent"
-            app:layout_scrollFlags="scroll|enterAlways"
-            android:background="@android:color/transparent"
-            android:id="@+id/toolbarId"></android.support.v7.widget.Toolbar>
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tabsId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tabMode="fixed"
-            android:backgroundTint="@android:color/transparent"
-            android:background="@color/common_google_signin_btn_text_light_default">
-
-        </android.support.design.widget.TabLayout>
-
-    </android.support.design.widget.AppBarLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpagerId"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/tab1"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        android:id="@+id/relativeId">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="@android:color/transparent">
+
+            <android.support.v7.widget.Toolbar
+                android:layout_height="?attr/actionBarSize"
+                android:layout_width="match_parent"
+                app:layout_scrollFlags="scroll|enterAlways"
+                android:background="@color/colorPrimaryDark"
+                android:id="@+id/toolbarId"></android.support.v7.widget.Toolbar>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabsId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabMode="fixed"
+                android:background="@color/colorPrimaryDark">
+
+            </android.support.design.widget.TabLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpagerId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_below="@+id/appbar" />
+
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

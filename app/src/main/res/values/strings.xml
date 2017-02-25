@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">"Take a Nap"</string>
+    <string name="teste">""</string>
     <!-- Nomes das musicas -->
 
     <string name="ocean">Quedas d Água</string>
@@ -9,7 +10,6 @@
 
     <!-- Strings related to Playlisy -->
     <string name="playlist">Playlist</string>
-
     <string name="title_activity_playlist">Custom View Icon &amp; Text</string>
 
     <!-- TODO: Remove or change this placeholder text -->

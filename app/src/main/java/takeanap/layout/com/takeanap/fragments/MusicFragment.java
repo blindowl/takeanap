@@ -80,7 +80,7 @@ public class MusicFragment extends Fragment implements RecyclerViewOnClickListen
     }
 
     public String getName(int position){
-        List<Songs> listAux = ((PlaylistActivity) getActivity()).getSetNatureList(10);
+        List<Songs> listAux = ((PlaylistActivity) getActivity()).getSetMusicList(10);
         String name = listAux.get(position).getName();
         return name;
     }

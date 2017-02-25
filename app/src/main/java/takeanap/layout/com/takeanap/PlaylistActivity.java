@@ -1,5 +1,6 @@
 package takeanap.layout.com.takeanap;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,7 +12,11 @@ import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,15 +38,23 @@ public class PlaylistActivity extends AppCompatActivity {
             R.drawable.ic_tab_nature,
             R.drawable.ic_tab_favourite};
 
+    private RelativeLayout relative;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playlist);
 
+        //BG
+        relative = (RelativeLayout) findViewById(R.id.relativeId);
+        relative.bringToFront();
+
         //Toolbar
         toolbar = (Toolbar) findViewById(R.id.toolbarId);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(R.string.teste);
 
         //Fragments & ViewPager
         pager = (ViewPager) findViewById(R.id.viewpagerId);
@@ -55,26 +68,30 @@ public class PlaylistActivity extends AppCompatActivity {
     }
 
     private void setupTabIcons() {
-        /*
-        TextView tabOne = (TextView) LayoutInflater.from(this).inflate(R.layout.tab1, null);
-        tabOne.setText("MÚSICAS");
-        tabOne.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_tab_musics, 0, 0);
-        tabLayout.getTabAt(0).setCustomView(tabOne);
-
-        TextView tabTwo = (TextView) LayoutInflater.from(this).inflate(R.layout.tab1, null);
-        tabTwo.setText("NATUREZA");
-        tabTwo.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_tab_nature, 0, 0);
-        tabLayout.getTabAt(1).setCustomView(tabTwo);
-
-        TextView tabThree = (TextView) LayoutInflater.from(this).inflate(R.layout.tab1, null);
-        tabThree.setText("FAVORITOS");
-        tabThree.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_tab_favourite, 0, 0);
-        tabLayout.getTabAt(2).setCustomView(tabThree);
-        */
-
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
         tabLayout.getTabAt(2).setIcon(tabIcons[2]);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_playlist, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.settingdId:
+                Toast.makeText(getApplicationContext(), "Configurações Selecionada", Toast.LENGTH_LONG).show();
+                return true;
+            case android.R.id.home:
+                finish();
+                System.exit(0);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private void setupViewPager(ViewPager viewPager) {

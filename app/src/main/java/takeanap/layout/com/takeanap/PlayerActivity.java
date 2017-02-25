@@ -4,19 +4,25 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.ActionMenuView;
 import android.support.v7.widget.Toolbar;
+import android.text.Layout;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +36,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnPreparedListener {
+
     private Toolbar toolbar;
     private ImageView start;
     private String name;
@@ -39,16 +46,24 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
     private TextView titleTextView;
     private TextView categoryTextView;
     private ImageView photoImageView;
+    private LinearLayout linear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //BG
+        linear = (LinearLayout) findViewById(R.id.linerId);
+        linear.bringToFront();
+
         //Toolbar
         toolbar = (Toolbar) findViewById(R.id.toolbarId);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(R.string.teste);
+
 
         //Fonts
         titleTextView = (TextView) findViewById(R.id.titleId);
@@ -91,11 +106,13 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
         fetchAudioUrlFromFirebase();
         fetchImageUrlFromFirebase();
 
+
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mediaPlayer.isPlaying()) {
                     mediaPlayer.pause();
+                    mediaPlayer.setLooping(true);
                     start.setImageDrawable(ContextCompat.getDrawable(PlayerActivity.this, R.drawable.ic_action_play));
                 } else {
                     mediaPlayer.start();
@@ -117,6 +134,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
                     mediaPlayer.setOnPreparedListener(PlayerActivity.this);
                     mediaPlayer.prepareAsync();
                 } catch (IOException e) {
+                    Log.i("erro", "Erro em puxar o audio");
                     e.printStackTrace();
                 }
             }
@@ -136,27 +154,30 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
             storageRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                    Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
-                    photoImageView.setImageBitmap(bitmap);
+                    Drawable photo = Drawable.createFromPath(localFile.getAbsolutePath());
+                    photoImageView.setImageDrawable(photo);
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception exception) {
+                    Log.i("erro", "Erro em puxar a imagem");
                 }
             });
         } catch (IOException e ) {
+            Log.i("erro", "Erro em puxar a imagem 2");
             e.printStackTrace();
         }
     }
 
     public void onPrepared(MediaPlayer mp) {
         mp.start();
-        start.setImageDrawable(ContextCompat.getDrawable(PlayerActivity.this, R.drawable.ic_action_play));
+        start.setImageDrawable(ContextCompat.getDrawable(PlayerActivity.this, R.drawable.ic_action_pause));
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -173,9 +194,26 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
             case R.id.settingdId:
                 Toast.makeText(getApplicationContext(), "Configurações Selecionada", Toast.LENGTH_LONG).show();
                 return true;
+            case android.R.id.home:
+                mediaPlayer.stop();
+                mediaPlayer.release();
+                mediaPlayer = null;
+                onBackPressed();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    /*
+    @Override
+    protected void onStop() {
+        //Toast.makeText(getApplicationContext(), "OnStop", Toast.LENGTH_LONG).show();
+        if (mediaPlayer.isPlaying()) {
+            mediaPlayer.stop();
+            super.onStop();
+        }
+    }
+    */
 }
 
