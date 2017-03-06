@@ -2,7 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="takeanap.layout.com.takeanap.fragments.NatureFragment">
+    tools:context="takeanap.layout.com.takeanap.fragments.NatureFragment"
+    android:tag="unique_tag"
+    android:id="@+id/natureId">
 
     <!-- TODO: Update blank fragment layout -->
 

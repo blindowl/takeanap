@@ -1,5 +1,6 @@
 package takeanap.layout.com.takeanap;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -10,6 +11,9 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -34,11 +38,17 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
+
+import takeanap.layout.com.takeanap.domain.Songs;
+import takeanap.layout.com.takeanap.fragments.NatureFragment;
 
 public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnPreparedListener {
 
     private Toolbar toolbar;
     private ImageView start;
+    private ImageView next;
+    private int position;
     private String name;
     private String title;
     private String category;
@@ -47,6 +57,8 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
     private TextView categoryTextView;
     private ImageView photoImageView;
     private LinearLayout linear;
+
+    public PlaylistActivity playlistActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,12 +88,14 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
         Bundle extra = getIntent().getExtras();
 
         if (extra != null) {
+            position = extra.getInt("position");
             name = extra.getString("name");
             title = extra.getString("title");
             category = extra.getString("category");
         }
 
         start = (ImageView) findViewById(R.id.startId);
+        next = (ImageView) findViewById(R.id.nextId);
         photoImageView = (ImageView) findViewById(R.id.photoId);
 
         //setTitle
@@ -103,9 +117,8 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
         */
 
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-        fetchAudioUrlFromFirebase();
         fetchImageUrlFromFirebase();
-
+        fetchAudioUrlFromFirebase();
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,6 +130,50 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
                 } else {
                     mediaPlayer.start();
                     start.setImageDrawable(ContextCompat.getDrawable(PlayerActivity.this, R.drawable.ic_action_pause));
+                }
+            }
+        });
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (category) {
+                    case "nature":
+                        if (position < 9) {
+                            setMediaPlayer();
+                            position++;
+                            titleTextView.setText(getNatureTitle(position));
+                            name = getNatureName(position);
+                            mediaPlayer = new MediaPlayer();
+                            fetchImageUrlFromFirebase();
+                            fetchAudioUrlFromFirebase();
+                        } else if (position == 9) {
+                            setMediaPlayer();
+                            position = 0;
+                            titleTextView.setText(getNatureTitle(position));
+                            name = getNatureName(position);
+                            mediaPlayer = new MediaPlayer();
+                            fetchImageUrlFromFirebase();
+                            fetchAudioUrlFromFirebase();
+                        }
+                    case "music":
+                        if (position < 9) {
+                            setMediaPlayer();
+                            position++;
+                            titleTextView.setText(getMusicTitle(position));
+                            name = getMusicName(position);
+                            mediaPlayer = new MediaPlayer();
+                            fetchImageUrlFromFirebase();
+                            fetchAudioUrlFromFirebase();
+                        } else if (position == 9) {
+                            setMediaPlayer();
+                            position = 0;
+                            titleTextView.setText(getMusicTitle(position));
+                            name = getMusicName(position);
+                            mediaPlayer = new MediaPlayer();
+                            fetchImageUrlFromFirebase();
+                            fetchAudioUrlFromFirebase();
+                        }
                 }
             }
         });
@@ -134,7 +191,6 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
                     mediaPlayer.setOnPreparedListener(PlayerActivity.this);
                     mediaPlayer.prepareAsync();
                 } catch (IOException e) {
-                    Log.i("erro", "Erro em puxar o audio");
                     e.printStackTrace();
                 }
             }
@@ -160,11 +216,10 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception exception) {
-                    Log.i("erro", "Erro em puxar a imagem");
+
                 }
             });
         } catch (IOException e ) {
-            Log.i("erro", "Erro em puxar a imagem 2");
             e.printStackTrace();
         }
     }
@@ -185,19 +240,15 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.playlistId:
-                mediaPlayer.stop();
-                mediaPlayer.release();
-                mediaPlayer = null;
+                setMediaPlayer();
                 Intent i = new Intent(PlayerActivity.this,PlaylistActivity.class);
                 this.startActivity(i);
                 return true;
             case R.id.settingdId:
-                Toast.makeText(getApplicationContext(), "Configurações Selecionada", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Configurações", Toast.LENGTH_LONG).show();
                 return true;
             case android.R.id.home:
-                mediaPlayer.stop();
-                mediaPlayer.release();
-                mediaPlayer = null;
+                setMediaPlayer();
                 onBackPressed();
                 return true;
             default:
@@ -205,15 +256,35 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
         }
     }
 
-    /*
-    @Override
-    protected void onStop() {
-        //Toast.makeText(getApplicationContext(), "OnStop", Toast.LENGTH_LONG).show();
-        if (mediaPlayer.isPlaying()) {
-            mediaPlayer.stop();
-            super.onStop();
-        }
+    public String getNatureName(int position){
+        List<Songs> listAux = playlistActivity.getSetNatureList(10);
+        name = listAux.get(position).getName();
+        return name;
     }
-    */
+
+    public String getMusicName(int position){
+        List<Songs> listAux = playlistActivity.getSetMusicList(10);
+        name = listAux.get(position).getName();
+        return name;
+    }
+
+    public String getNatureTitle(int position){
+        List<Songs> listAux = playlistActivity.getSetNatureList(10);
+        String title = listAux.get(position).getTitle();
+        return title;
+    }
+
+    public String getMusicTitle(int position){
+        List<Songs> listAux = playlistActivity.getSetMusicList(10);
+        String title = listAux.get(position).getTitle();
+        return title;
+    }
+
+    public void setMediaPlayer() {
+        mediaPlayer.stop();
+        mediaPlayer.release();
+        mediaPlayer = null;
+    }
+
 }
 

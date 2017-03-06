@@ -134,7 +134,7 @@ public class PlaylistActivity extends AppCompatActivity {
 
     }
 
-    public List<Songs> getSetNatureList(int qtd){
+    public static List<Songs> getSetNatureList(int qtd){
         String[] titles = {"Quedas d'Água", "Tempestado no Campo", "Chuvas e Trovões", "Canto dos Pássaros",
                 "Crepúsculo", "Rio da Selva", "Ondas do Oceano", "Pequenos Sapos Verdes", "Florestas Profundas",
                 "Serenata da Meia-Noite"};
@@ -149,7 +149,7 @@ public class PlaylistActivity extends AppCompatActivity {
         return (listAux);
     }
 
-    public List<Songs> getSetMusicList(int qtd){
+    public static List<Songs> getSetMusicList(int qtd){
         String[] titles = {"Música Tibetana", "Música Hawaiiana", "Música Indiana", "Música Chinesa",
                 "Música Tailandesa", "Piano", "Harpa", "Violino", "Violão", "Flauta"};
         String[] phrases = {"frase1", "frase2", "frase3", "frase4", "frase5", "frase6", "frase7", "frase8", "frase9", "frase10"};
@@ -162,9 +162,6 @@ public class PlaylistActivity extends AppCompatActivity {
         }
         return (listAux);
     }
-
-
-
 
 
 }

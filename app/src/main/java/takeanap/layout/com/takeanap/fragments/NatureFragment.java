@@ -96,6 +96,7 @@ public class NatureFragment extends Fragment implements RecyclerViewOnClickListe
         String name = getName(position);
         String title = getTitle(position);
         Intent intent = new Intent(NatureFragment.this.getActivity(), PlayerActivity.class);
+        intent.putExtra("position", position);
         intent.putExtra("name", name);
         intent.putExtra("title", title);
         intent.putExtra("category","nature");
