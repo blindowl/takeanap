@@ -93,6 +93,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
             title = extra.getString("title");
             category = extra.getString("category");
         }
+        Toast.makeText(getApplicationContext(),"Position: "+position, Toast.LENGTH_SHORT).show();
 
         start = (ImageView) findViewById(R.id.startId);
         next = (ImageView) findViewById(R.id.nextId);
@@ -142,11 +143,13 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
                         if (position < 9) {
                             setMediaPlayer();
                             position++;
+                            Toast.makeText(getApplicationContext(),category, Toast.LENGTH_SHORT).show();
                             titleTextView.setText(getNatureTitle(position));
                             name = getNatureName(position);
                             mediaPlayer = new MediaPlayer();
                             fetchImageUrlFromFirebase();
                             fetchAudioUrlFromFirebase();
+                            Toast.makeText(getApplicationContext(),"Position: "+position, Toast.LENGTH_SHORT).show();
                         } else if (position == 9) {
                             setMediaPlayer();
                             position = 0;
@@ -155,6 +158,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
                             mediaPlayer = new MediaPlayer();
                             fetchImageUrlFromFirebase();
                             fetchAudioUrlFromFirebase();
+                            Toast.makeText(getApplicationContext(),"Position: "+position, Toast.LENGTH_SHORT).show();
                         }
                     case "music":
                         if (position < 9) {
@@ -165,6 +169,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
                             mediaPlayer = new MediaPlayer();
                             fetchImageUrlFromFirebase();
                             fetchAudioUrlFromFirebase();
+                            Toast.makeText(getApplicationContext(),"Position: "+position, Toast.LENGTH_SHORT).show();
                         } else if (position == 9) {
                             setMediaPlayer();
                             position = 0;
@@ -173,6 +178,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
                             mediaPlayer = new MediaPlayer();
                             fetchImageUrlFromFirebase();
                             fetchAudioUrlFromFirebase();
+                            Toast.makeText(getApplicationContext(),"Position: "+position, Toast.LENGTH_SHORT).show();
                         }
                 }
             }

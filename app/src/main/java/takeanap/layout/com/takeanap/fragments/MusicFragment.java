@@ -99,6 +99,7 @@ public class MusicFragment extends Fragment implements RecyclerViewOnClickListen
         intent.putExtra("name", name);
         intent.putExtra("title", title);
         intent.putExtra("category","music");
+        intent.putExtra("position",position);
         startActivity(intent);
     }
 
