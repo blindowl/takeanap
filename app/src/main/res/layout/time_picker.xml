@@ -11,5 +11,6 @@
         android:layout_weight="1"
         android:amPmTextColor="@android:color/black"
         android:numbersBackgroundColor="@android:color/black"
-        android:headerBackground="@color/colorPrimaryDark" />
+        android:headerBackground="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary" />
 </LinearLayout>

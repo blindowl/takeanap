@@ -89,7 +89,6 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.teste);
 
-
         //Fonts
         titleTextView = (TextView) findViewById(R.id.titleId);
         categoryTextView = (TextView) findViewById(R.id.categoryId);
@@ -124,13 +123,6 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
         }
 
         mediaPlayer = new MediaPlayer();
-
-        /*
-        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
-
-        }
-        */
-
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         fetchImageUrlFromFirebase();
         fetchAudioUrlFromFirebase();
@@ -140,7 +132,6 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
             public void onClick(View v) {
                 if (mediaPlayer.isPlaying()) {
                     mediaPlayer.pause();
-                    mediaPlayer.setLooping(true);
                     start.setImageDrawable(ContextCompat.getDrawable(PlayerActivity.this, R.drawable.ic_action_play));
                 } else {
                     mediaPlayer.start();
@@ -152,28 +143,25 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
         previous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch (category) {
-                    case "nature":
-                        if (position > 0) {
-                            setMediaPlayer();
-                            position--;
-                            titleTextView.setText(getNatureTitle(position));
-                            name = getNatureName(position);
-                            mediaPlayer = new MediaPlayer();
-                            fetchImageUrlFromFirebase();
-                            fetchAudioUrlFromFirebase();
-                            Toast.makeText(getApplicationContext(), "Position: " + position, Toast.LENGTH_SHORT).show();
-                        } else if (position == 0) {
-                            setMediaPlayer();
-                            position = 9;
-                            titleTextView.setText(getNatureTitle(position));
-                            name = getNatureName(position);
-                            mediaPlayer = new MediaPlayer();
-                            fetchImageUrlFromFirebase();
-                            fetchAudioUrlFromFirebase();
-                            Toast.makeText(getApplicationContext(), "Position: " + position, Toast.LENGTH_SHORT).show();
-                        }
-                    case "music":
+                if (category.equals("nature")) {
+                    if (position > 0) {
+                        setMediaPlayer();
+                        position--;
+                        titleTextView.setText(getNatureTitle(position));
+                        name = getNatureName(position);
+                        mediaPlayer = new MediaPlayer();
+                        fetchImageUrlFromFirebase();
+                        fetchAudioUrlFromFirebase();
+                    } else if (position == 0) {
+                        setMediaPlayer();
+                        position = 9;
+                        titleTextView.setText(getNatureTitle(position));
+                        name = getNatureName(position);
+                        mediaPlayer = new MediaPlayer();
+                        fetchImageUrlFromFirebase();
+                        fetchAudioUrlFromFirebase();
+                    }
+                } else if (category.equals("music")) {
                         if (position > 0) {
                             setMediaPlayer();
                             position--;
@@ -198,46 +186,43 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch (category) {
-                    case "nature":
-                        if (position < 9) {
-                            setMediaPlayer();
-                            position++;
-                            Toast.makeText(getApplicationContext(), category, Toast.LENGTH_SHORT).show();
-                            titleTextView.setText(getNatureTitle(position));
-                            name = getNatureName(position);
-                            mediaPlayer = new MediaPlayer();
-                            fetchImageUrlFromFirebase();
-                            fetchAudioUrlFromFirebase();
-                            Toast.makeText(getApplicationContext(), "Position: " + position, Toast.LENGTH_SHORT).show();
-                        } else if (position == 9) {
-                            setMediaPlayer();
-                            position = 0;
-                            titleTextView.setText(getNatureTitle(position));
-                            name = getNatureName(position);
-                            mediaPlayer = new MediaPlayer();
-                            fetchImageUrlFromFirebase();
-                            fetchAudioUrlFromFirebase();
-                            Toast.makeText(getApplicationContext(), "Position: " + position, Toast.LENGTH_SHORT).show();
-                        }
-                    case "music":
-                        if (position < 9) {
-                            setMediaPlayer();
-                            position++;
-                            titleTextView.setText(getMusicTitle(position));
-                            name = getMusicName(position);
-                            mediaPlayer = new MediaPlayer();
-                            fetchImageUrlFromFirebase();
-                            fetchAudioUrlFromFirebase();
-                        } else if (position == 9) {
-                            setMediaPlayer();
-                            position = 0;
-                            titleTextView.setText(getMusicTitle(position));
-                            name = getMusicName(position);
-                            mediaPlayer = new MediaPlayer();
-                            fetchImageUrlFromFirebase();
-                            fetchAudioUrlFromFirebase();
-                        }
+                if (category.equals("nature")) {
+                    if (position < 9) {
+                        setMediaPlayer();
+                        position++;
+                        titleTextView.setText(getNatureTitle(position));
+                        name = getNatureName(position);
+                        mediaPlayer = new MediaPlayer();
+                        fetchImageUrlFromFirebase();
+                        fetchAudioUrlFromFirebase();
+                    } else if (position == 9) {
+                        setMediaPlayer();
+                        position = 0;
+                        titleTextView.setText(getNatureTitle(position));
+                        name = getNatureName(position);
+                        mediaPlayer = new MediaPlayer();
+                        fetchImageUrlFromFirebase();
+                        fetchAudioUrlFromFirebase();
+                        ;
+                    }
+                } else if (category.equals("music")) {
+                    if (position < 9) {
+                        setMediaPlayer();
+                        position++;
+                        titleTextView.setText(getMusicTitle(position));
+                        name = getMusicName(position);
+                        mediaPlayer = new MediaPlayer();
+                        fetchImageUrlFromFirebase();
+                        fetchAudioUrlFromFirebase();
+                    } else if (position == 9) {
+                        setMediaPlayer();
+                        position = 0;
+                        titleTextView.setText(getMusicTitle(position));
+                        name = getMusicName(position);
+                        mediaPlayer = new MediaPlayer();
+                        fetchImageUrlFromFirebase();
+                        fetchAudioUrlFromFirebase();
+                    }
                 }
             }
         });
@@ -388,7 +373,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
                         timeConvert = valueHour * 3600000 + valueMinute * 60000;
 
                         setCountDownTimer(timeConvert);
-                        Toast.makeText(getApplicationContext(), timeConvert + " milisegundos", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"A música irá parar em "+HourText+" horas e "+MinuteText+" minutos! :)", Toast.LENGTH_LONG).show();
                     }
 
                 }).show();
