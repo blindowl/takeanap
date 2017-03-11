@@ -3,210 +3,210 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.1_84a95f2931a6952ae4da4529429a056603b5a2e0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.1_e4cd8807db755116845cc2e97c73465bbc9209d4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.android.support\design\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.1.1_3c677d5e0c576f2a71f5aaac86ec2ef4ac89e9e1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.1.1_36fec145938e9138d1241dbc22874933ff89b127\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.1\jars\classes.jar"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.1.1_ec935445ec656e3a75de6ce7412dfec32010860d\classes.dex" />
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.1.1_9b2422611cd3fdc7a363b84deaa6e3704e4d2746\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="bd8dd3be8b7a4b3f4cd986548bc4b06b9e3cb37f">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_bd07bd739f5ec9cb5fa561511a77477e942e6645\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.1_fdfcb37663548f2c8ed99f2482531ec579034fa3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-10.0.1_ab79d069bcc292bdd7dea74f8ef6b6b6002a50bd\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.1_bbcc1735ed59e5e5735b2874259000a4bdcdc9b9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.0.1_7d9d89705e2567b7c0aaa0ca5c749b93634a75f1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Usuario\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
+        jar="C:\Users\WorkOnly\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.1_dc4973fad6690fb9212130e9770d824cc4cc2069\classes.dex" />
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.1_6600037009d83d924373dc46026523c1ff7f821f\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.0.1\jars\classes.jar"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.android.support\design\25.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-10.0.1_c6b69ff29653ba5cbc8cca40c6087385e86194ca\classes.dex" />
+        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.1.1_1f6d519868a17e4b970d8e32c6c7910addfb1bb7\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.1_c6c1b1361826f49a33ad9fd7243ece87ff69a6bc\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.1_2016934221b6b29f6570906f7e502344e71095b0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="dd39827d2067497e60e21da48a7926000b6d4b0c">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-10.0.1_d4c38dddd9b466d583dc8e13cd7474977ad38669\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.1.1_e146a51275e11e3d8ff088f4d6f2ae06e050653d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-10.0.1_288878d1014442ee775b84dafdbb7444c6ed9a95\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage-common\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="09cf6aa1390f95157e8295d02be7868f568825fc">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-common-10.0.1_5d694f9bcbe7b07fa176ab732874aa19893fa781\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.1.1_e7c96726a0d0b9f69ba60b264c654b6bbbf5dc4f\classes.dex" />
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.1.1_f71d1e9be2bac065175ce4775cca83c5ebb214d7\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.0.1\jars\classes.jar"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-10.0.1_bd4bd8f9e7a5dbe9adc50697645344c5673c8c3d\classes.dex" />
+        sha1="3d5aabf2e4184269c2184372285be39324efae10">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_5a26bb76ea1df25e7b897ec104f1bd47324d6b27\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-10.0.1_bd8a1cb9006154924e597d336b1e44d2cde15eac\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.1_410acbf13a9504346c6079a03ea3565a190b89c9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.1.1_f743a8c61cf88208eb3641a70abb2f4d3868bc33\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-10.0.1_3263b0d25ee96092762a65cc0be3fd9997003ee4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.0.1_415026d306aeb16c8d4bde2a8de5204687c10fea\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dd39827d2067497e60e21da48a7926000b6d4b0c">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-10.0.1_476f53d4c5b66d29d03a42b816963388d9f2dadb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-10.0.1_71ac8af4b06f76a4b451f3ff1620ad2461fcd727\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="68d168fab809c84711547a69a8683d3aabf70351">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_f9a4e19df53659c294e735cc3bfe71c68519a84b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.1.1_8049011f38f0cd2b149dad08fa8c428ab8d3463f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_bc3b6226ec74e337c1fe951b554187b83267e488\classes.dex" />
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_ab32459c85329b5da3e666db5bd2fb1a074aeea8\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="e37ed9450b25b7a6c9b68e7d724364d1aee85046">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_f70f7203930a8b12d314ed2470d375618b9d9c95\classes.dex" />
+        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.1_7b03b99fb7aa793acc03f1d25cc3f57ecfebed48\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.1_fbf71f1768387ed7d26585b0a083b53c2e1d6d17\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.1_6f53c6ddfd5dad80a98677c7d5535c87261f5956\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.1_be5aa62f8045b530b55864f99ee1280d70b2e44f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage-common\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="09cf6aa1390f95157e8295d02be7868f568825fc">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-common-10.0.1_29868c2af8e87c2367a57a5606361d551d9f56ef\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
-        <dex dex="C:\Users\Usuario\Desktop\Priscila\Trabalhos\Android Apps\Apps\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.1.1_7fcf13f216adfc79908037a3c51618872236cb2f\classes.dex" />
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.1.1_b07e3c7113366fc7653b81cbc2712f1adcabd448\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.1_1b312d0a9796cadfeb52cf9478c586ea8105bbda\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="E:\Trabalho\Aplicativos\takeanap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-10.0.1_d8fea46cb8a787aeaf515a25f98b768cab653218\classes.dex" />
     </item>
 
 </items>
