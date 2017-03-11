@@ -96,10 +96,10 @@ public class MusicFragment extends Fragment implements RecyclerViewOnClickListen
         String name = getName(position);
         String title = getTitle(position);
         Intent intent = new Intent(MusicFragment.this.getActivity(), PlayerActivity.class);
+        intent.putExtra("position",position);
         intent.putExtra("name", name);
         intent.putExtra("title", title);
         intent.putExtra("category","music");
-        intent.putExtra("position",position);
         startActivity(intent);
     }
 

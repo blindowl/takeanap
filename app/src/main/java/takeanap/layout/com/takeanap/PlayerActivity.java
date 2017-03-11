@@ -1,9 +1,6 @@
 package takeanap.layout.com.takeanap;
 
-import android.app.Fragment;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
@@ -11,15 +8,9 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.ActionMenuView;
 import android.support.v7.widget.Toolbar;
-import android.text.Layout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -41,13 +32,13 @@ import java.io.IOException;
 import java.util.List;
 
 import takeanap.layout.com.takeanap.domain.Songs;
-import takeanap.layout.com.takeanap.fragments.NatureFragment;
 
 public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnPreparedListener {
 
     private Toolbar toolbar;
     private ImageView start;
     private ImageView next;
+    private ImageView previous;
     private int position;
     private String name;
     private String title;
@@ -63,7 +54,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_player);
 
         //BG
         linear = (LinearLayout) findViewById(R.id.linerId);
@@ -93,10 +84,10 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
             title = extra.getString("title");
             category = extra.getString("category");
         }
-        Toast.makeText(getApplicationContext(),"Position: "+position, Toast.LENGTH_SHORT).show();
 
         start = (ImageView) findViewById(R.id.startId);
         next = (ImageView) findViewById(R.id.nextId);
+        previous = (ImageView) findViewById(R.id.previousId);
         photoImageView = (ImageView) findViewById(R.id.photoId);
 
         //setTitle
@@ -135,6 +126,52 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
             }
         });
 
+        previous.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (category) {
+                    case "nature":
+                        if (position > 0) {
+                            setMediaPlayer();
+                            position--;
+                            titleTextView.setText(getNatureTitle(position));
+                            name = getNatureName(position);
+                            mediaPlayer = new MediaPlayer();
+                            fetchImageUrlFromFirebase();
+                            fetchAudioUrlFromFirebase();
+                            Toast.makeText(getApplicationContext(),"Position: "+position, Toast.LENGTH_SHORT).show();
+                        } else if (position == 0) {
+                            setMediaPlayer();
+                            position = 9;
+                            titleTextView.setText(getNatureTitle(position));
+                            name = getNatureName(position);
+                            mediaPlayer = new MediaPlayer();
+                            fetchImageUrlFromFirebase();
+                            fetchAudioUrlFromFirebase();
+                            Toast.makeText(getApplicationContext(),"Position: "+position, Toast.LENGTH_SHORT).show();
+                        }
+                    case "music":
+                        if (position > 0) {
+                            setMediaPlayer();
+                            position--;
+                            titleTextView.setText(getMusicTitle(position));
+                            name = getMusicName(position);
+                            mediaPlayer = new MediaPlayer();
+                            fetchImageUrlFromFirebase();
+                            fetchAudioUrlFromFirebase();
+                        } else if (position == 0) {
+                            setMediaPlayer();
+                            position = 9;
+                            titleTextView.setText(getMusicTitle(position));
+                            name = getMusicName(position);
+                            mediaPlayer = new MediaPlayer();
+                            fetchImageUrlFromFirebase();
+                            fetchAudioUrlFromFirebase();
+                        }
+                }
+            }
+        });
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -169,7 +206,6 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
                             mediaPlayer = new MediaPlayer();
                             fetchImageUrlFromFirebase();
                             fetchAudioUrlFromFirebase();
-                            Toast.makeText(getApplicationContext(),"Position: "+position, Toast.LENGTH_SHORT).show();
                         } else if (position == 9) {
                             setMediaPlayer();
                             position = 0;
@@ -178,7 +214,6 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
                             mediaPlayer = new MediaPlayer();
                             fetchImageUrlFromFirebase();
                             fetchAudioUrlFromFirebase();
-                            Toast.makeText(getApplicationContext(),"Position: "+position, Toast.LENGTH_SHORT).show();
                         }
                 }
             }
@@ -268,16 +303,16 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnP
         return name;
     }
 
-    public String getMusicName(int position){
-        List<Songs> listAux = playlistActivity.getSetMusicList(10);
-        name = listAux.get(position).getName();
-        return name;
-    }
-
     public String getNatureTitle(int position){
         List<Songs> listAux = playlistActivity.getSetNatureList(10);
         String title = listAux.get(position).getTitle();
         return title;
+    }
+
+    public String getMusicName(int position){
+        List<Songs> listAux = playlistActivity.getSetMusicList(10);
+        name = listAux.get(position).getName();
+        return name;
     }
 
     public String getMusicTitle(int position){
